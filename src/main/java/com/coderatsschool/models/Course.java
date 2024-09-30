@@ -1,14 +1,17 @@
 package com.coderatsschool.models;
 
 import com.coderatsschool.dtos.CourseCreationDTO;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotNull;    
 import java.util.List;
 
 @Data
 @Entity(name = "courses")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
